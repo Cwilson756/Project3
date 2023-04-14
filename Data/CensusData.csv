@@ -1,4 +1,4 @@
-Name,Geography Type,Year,Resident Population,Percent Change in Resident Population,Resident Population Density,Resident Population Density Rank,Number of Representatives,Change in Number of Representatives,Average Apportionment Population Per Representative
+Name,GeographyType,Year,ResidentPopulation,PercentChangeInResidentPopulation,ResidentPopulationDensity,ResidentPopulationDensityRank,NumberOfRepresentatives,ChangeInNumberOfRepresentatives,AverageApportionmentPopulationPerRepresentative
 Alabama,State,1910,"2,138,093",16.9,42.2,25,10,1,"213,809"
 Alaska,State,1910,"64,356",1.2,0.1,52,,,
 Arizona,State,1910,"204,354",66.2,1.8,49,,,
