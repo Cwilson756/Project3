@@ -1,30 +1,30 @@
 d3.csv("data/monthlyStateValue.csv").then((importedData) => {
   // console.log(importedData);
-  let data = importedData;
+  let MonthlyStateValue = importedData;
 
-  console.log(data);
+  console.log(MonthlyStateValue);
 });
 d3.csv("data/yearlyCountyIncome.csv").then((importedData) => {
   // console.log(importedData);
-  let data = importedData;
+  let YearlyCountyIncome = importedData;
 
-  console.log(data);
+  console.log(YearlyCountyIncome);
 });
 d3.csv("data/yearlyStateValue.csv").then((importedData) => {
   // console.log(importedData);
-  let data = importedData;
+  let YearlyStateValue = importedData;
 
-  console.log(data);
+  console.log(YearlyStateValue);
 });
 d3.csv("data/yearlyUSValue.csv").then((importedData) => {
   // console.log(importedData);
-  let data = importedData;
+  let YearlyUSValue = importedData;
 
-  console.log(data);
+  console.log(YearlyUSValue);
 });
 d3.csv("data/CensusData.csv").then((importedData) => {
   // console.log(importedData);
-  let data = importedData;
+  let CensusData = importedData;
 
-  console.log(data);
+  console.log(CensusData);
 });
