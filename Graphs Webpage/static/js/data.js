@@ -1,24 +1,9 @@
-var arrayName = [];
-
-d3.csv("data/monthlyStateValue.csv").then((importedData) => {
-  // console.log(importedData);
-  let MonthlyStateValue = importedData;
-
-  console.log(MonthlyStateValue);
-});
-d3.csv("data/yearlyCountyIncome.csv").then((importedData) => {
-  // console.log(importedData);
-  let YearlyCountyIncome = importedData;
-
-  console.log(YearlyCountyIncome);
-});
 d3.csv("data/yearlyStateValue.csv").then((importedData) => {
   // console.log(importedData);
   var YearlyStateValue = importedData;
 
   console.log(YearlyStateValue);
 });
-var fred = [];
 
 d3.csv("data/yearlyUSValue.csv").then((importedData) => {
   // console.log(importedData);
@@ -34,8 +19,6 @@ d3.csv("data/yearlyUSValue.csv").then((importedData) => {
   // draw the line chart
   chart.draw();
   console.log(numberList);
-  //console.log(YearlyUSValue);
-  //fred = YearlyUSValue
 });
 d3.csv("data/CensusData.csv").then((importedData) => {
   // console.log(importedData);
