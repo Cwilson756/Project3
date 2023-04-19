@@ -17,6 +17,9 @@ Census Data: https://www.census.gov/data/tables/time-series/dec/popchange-data-t
 
 National home value data: https://fred.stlouisfed.org/series/MSPUS
 
+**The Inspiration**
+![Image 1](./images Project 3/Picture1.png)
+
 
 **The Visualizations**
 <ul>
