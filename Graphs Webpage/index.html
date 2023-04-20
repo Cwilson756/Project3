@@ -8,35 +8,87 @@
   <title>State Housing Information</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
-</head>
+  <style>
+    body {
+      background-color: #f2f2f2;
+    }
+    .jumbotron {
+      background-color: #007bff;
+      color: #fff;
+    }
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+      margin-top: 0;
+    }
+    .well {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+    h5 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    select {
+      width: 100%;
+      height: 34px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      padding: 6px 12px;
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0069d9;
+    }
+    .graph-box {
+      border: 3px solid black;
+      padding: 15px;
+      margin: 20px auto;
+      width: 1200px;
+    }
+  </style>
+  </head>
 
 <body>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>State Housing Information</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
+<div class="container">
+      <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>State Housing Information</h1>
+          <p>Use the interactive charts below to explore the dataset</p>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>State</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>        
+      <div class="row">
+        <div class="col-md-2">
+          <div class="well">
+            <h5>State</h5>
+            <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          </div>
         </div>
         <button onclick="location.href='../Map/choroplethMap.html'">Home Affordability Map</button>
       </div>
     </div>
   </div>
-  
-  <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
-  <div id='myDiv1'><!-- Plotly chart will be drawn inside this DIV --></div>
 
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="./static/js/data.js"></script>
-  
+<div class="graph-box">
+  <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+</div>
+<div class="graph-box">
+  <div id='myDiv1'><!-- Plotly chart will be drawn inside this DIV --></div>
+</div>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="./static/js/data.js"></script>
   
 </body>
-
 </html>
