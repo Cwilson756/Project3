@@ -30,10 +30,10 @@ fetch('statesData.geojson')
       },
       onEachFeature: function(feature, layer) {
         var stateName = feature.properties.NAME;
-        var affordability = feature.properties.affordability;
-        //ROUND TWO DIGITS AND ADD PERCENT SIGN AFFORDABILITY
-        //ADD POPULATION, INCOME AND HOME VALUE TO GEOJSON AND ADD TO STATE DISCRIPTION
-        layer.bindPopup(stateName + '<br>Home value to income ratio: ' + affordability);
+        var affordability = (feature.properties.affordability);
+        var income = feature.properties.averageIncome;
+        var value = feature.properties.averageHomeValue;
+        layer.bindPopup(stateName + '<br>Average Home Value: $' + value + '<br>Average Income: $' + income + '<br>Years to Purchase: ' + affordability + ' Years');
       }
     });
     
@@ -43,7 +43,7 @@ fetch('statesData.geojson')
     var legend = L.control({ position: 'bottomright' });
     legend.onAdd = function() {
       var div = L.DomUtil.create('div', 'legend');
-      div.innerHTML += "<h4>Home Value to Income Ratio</h4>";
+      div.innerHTML += "<h4>Years to Purchase</h4>";
   div.innerHTML += '<i style="background: green"></i><span>0-4</span><br>';
   div.innerHTML += '<i style="background: yellow"></i><span>4-6</span><br>';
   div.innerHTML += '<i style="background: orange"></i><span>6-8</span><br>';
