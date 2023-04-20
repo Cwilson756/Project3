@@ -213,22 +213,12 @@ RegionName VARCHAR(255) NOT NULL,
 
 SELECT * FROM monthlyStateValue;
 
-CREATE TABLE CensusData (
-  Name VARCHAR(225),
-  GeographyType VARCHAR(10),
-  Year INT,
-  ResidentPopulation INT,
-  PercentChangeInResidentPopulation FLOAT,
-  ResidentPopulationDensity FLOAT,
-  ResidentPopulationDensityRank INT,
-  NumberOfRepresentatives INt,
-  ChangeInNumberOfRepresentatives INt,
-  AverageApportionmentPopulationPerRepresentative FLOAT
+CREATE TABLE clean2023Data (
+state VarChar(225),
+"2023" float,
+HouseholdIncome float,
+HomeValue float,
+affordability float
 );
 
-CREATE TABLE yearlyCountyIncome (
-County VarChar(225),
-"2019" float,
-"2020" float,
-"2021" float
-);
+SELECT * FROM clean2023Data
