@@ -7,6 +7,9 @@ Counrtydata=d3.json(Country);
 let Scatter_Info="data/PopulationAndPriceChange.json"
 ScatterData=d3.json(Scatter_Info);
 
+let States1 = "data/MonthlyAverages.json"
+Statesdata1=d3.json(States1);
+
 function init() {
 
     // dropdown menu
@@ -22,8 +25,9 @@ function init() {
 
         let name = names[0];
 
-        // calls the line function
+        // calls the function
         line(name);
+        bar(name);
     });
 }
 
@@ -109,11 +113,59 @@ function line(selection) {
             
         Plotly.newPlot('myDiv1', data1, layout1);
 
+function bar(selection) {
+     Statesdata1.then((data) => {
+        
+            let states = data.states;
+            let filteredData = states.filter((state) => state.RegionName === selection);
+            let obj = filteredData[0];
+            var dict = obj;
+            var x_arr3 = [];
+            var y_arr3 = [];
+        
+            for (var key in dict) {
+                if (dict.hasOwnProperty(key)) {
+                x_arr3.push(key);
+                y_arr3.push(dict[key]);
+                }
+            }
+            let trace4 = [{
+                x: x_arr3,
+                y: y_arr3,
+                type: "bar",
+                text: y_arr3.map(String),
+                textposition: 'auto',
+                hoverinfo: 'none',
+                marker: {
+                    color: 'rgb(158,202,225)',
+                    opacity: 0.6,
+                    line: {
+                      color: 'rgb(8,48,107)',
+                      width: 1.5,               
+                transform: [{
+                    type:'sort',
+                    target: x_arr3,
+                    order : 'descending'
+                }]
+            }
+                }    
+            }];
 
+            var layout2 = {
+                title: 'Monthly Weighted Price 2010-2022',
+                xaxis: {title: "Monthly Weighted Average"},
+                yaxis: {title: "Monthly Weighted Price"},
+                barmode: 'stack'
+            };
+            
+            Plotly.newPlot("myDiv2", trace4, layout2);
+        });
+    };
 
 
 function optionChanged(selection) {
     line(selection);
+    bar(selection)
 }
 init();
 
